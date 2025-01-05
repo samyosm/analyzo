@@ -10,7 +10,9 @@ export async function POST(request: NextRequest) {
   }
   const classifier = await PipelineSingleton.getInstance();
 
+  //@ts-expect-error That's the library
   const result = await classifier(text, { top_k: null });
+
 
   return NextResponse.json(result);
 }

@@ -22,7 +22,7 @@ export function TextWidget() {
       <textarea
         onInput={(e) => debounced(e.currentTarget.value)}
         defaultValue={text}
-        className="w-full h-full outline-none p-12 text-lg"
+        className="w-full min-h-52 md:min-h-0 h-full outline-none p-12 text-lg"
         placeholder="Begin writing..."
       />
     </section>
