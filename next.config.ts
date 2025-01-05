@@ -8,6 +8,7 @@ const __dirname = path.dirname(__filename);
 
 const nextConfig: NextConfig = {
   /* config options here */
+  output: 'standalone',
   serverExternalPackages: ['sharp', 'onnxruntime-node'],
   webpack: (config) => {
     config.resolve.alias['@huggingface/transformers'] = path.resolve(__dirname, 'node_modules/@huggingface/transformers');
