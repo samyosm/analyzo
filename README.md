@@ -21,7 +21,7 @@ The model powering our analysis is [SamLowe/roberta-base-go_emotions](https://hu
 
 ### Usage
 
-1. Open the [website](https://sentify.samyosm.com)
+1. Open the [website](https://huggingface.co/spaces/samyosm/sentify)
 2. Start writing the provided text area
 3. See the results, immediatly!
 
