@@ -7,8 +7,8 @@ const font = Font({
 });
 
 export const metadata: Metadata = {
-  title: "Analyzo",
-  description: "Analyze the sentiment of your text.",
+  title: "Sentify",
+  description: "Analyze text sentiment with AI.",
 };
 
 export default function RootLayout({
@@ -17,9 +17,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${font.className} antialiased`}
+        className={`${font.className} antialiased bg-white text-black`}
       >
         {children}
       </body>

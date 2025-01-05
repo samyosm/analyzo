@@ -1,23 +1,44 @@
-import { SentimentDisplay } from "@/components/sentiment-display/SentimentDisplay";
+'use client'
 import { TitleBar } from "@/components/title-bar/TitleBar";
+import { useTextStore } from "./TextStore";
+import { Suspense } from "react";
+import { SentimentList } from "./SentimentList";
+import { Fallback } from "@/components/fallback/Fallback";
+import Link from "next/link";
+
+async function getData(text: string) {
+  const raw = await fetch('/api/classify', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      text,
+    })
+  });
+
+  return raw.json();
+
+}
 
 export function SentimentWidget() {
+  const { text } = useTextStore();
+
   return (
-    <section className="w-full max-w-2xl">
+    <section className="w-full max-w-2xl h-full flex flex-col">
       <TitleBar label="Sentiment">
-        <p
-          className="border-b border-b-zinc-200 border-dotted"
+        <Link
+          href="https://github.com/samyosm/analyzo#how"
+          className="border-dotted hover:underline"
           title="This widget uses an AI"
         >
           How?
-        </p>
+        </Link>
       </TitleBar>
-      <div className="flex flex-col gap-8 p-12">
-        <SentimentDisplay label="confusion" value={1} />
-        <SentimentDisplay label="fear" value={0.50} />
-        <SentimentDisplay label="fear" value={0.532} />
-        <SentimentDisplay label="fear" value={0.0001} />
-      </div>
+      <Suspense fallback={<Fallback />}>
+        <SentimentList dataPromise={getData(text)} />
+      </Suspense>
     </section>
 
   )
