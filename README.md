@@ -1,3 +1,13 @@
+---
+title: Sentify
+emoji: 🧠
+colorFrom: pink
+colorTo: red
+sdk: docker
+pinned: false
+app_port: 3000
+---
+
 # Sentify
 
 ![Sentify Preview](./assets/preview.png)
