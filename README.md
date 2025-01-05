@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sentify
+
+![Sentify Preview](./assets/preview.png)
+
+**Sentify** is a web platform designed for analyzing the sentiments of a given text with a focus on ease of use.
+
+## Features
+
+- **Speedy results**: Instantly get the set of given emotions in a piece of text.
+- **Minimalistic**: A clean and intuitive interface priotizing user experience.
+- **Ease of Use**: No barriers like logins, forms or complex graphics—just write and see.
+
+## How
+
+This platform leverages natural language processing (NLP) technology to analyze the sentiment and emotions in text.
+At its core, we make use of **Hugging Face Transformers**.
+
+The model powering our analysis is [SamLowe/roberta-base-go_emotions](https://huggingface.co/SamLowe/roberta-base-go_emotions).
 
 ## Getting Started
 
-First, run the development server:
+### Usage
+
+1. Open the [website](https://sentify.samyosm.com)
+2. Start writing the provided text area
+3. See the results, immediatly!
+
+### Installation (For Developers)
+
+Clone the resposity:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/samyosm/sentify
+cd sentify
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run the development server:
 
-## Learn More
+```bash
+yarn dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Technology Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Frontend**: React (NextJS), React Query, Zustand and Tailwind
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Acknowledgements
 
-## Deploy on Vercel
+- Motivated by the [High Seas](https://highseas.hackclub.com/) initiative
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the [MIT License](./LICENSE)
